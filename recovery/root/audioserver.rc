@@ -1,0 +1,60 @@
+service audioserver /system/bin/audioserver
+    class core
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio camera drmrpc media mediadrm net_bt net_bt_admin net_bw_acct wakelock system log
+    capabilities BLOCK_SUSPEND
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh HighPerformance
+    onrestart restart vendor.audio-hal
+    onrestart restart vendor.audio-hal-4-0-msd
+    # Keep the original service names for backward compatibility
+    onrestart restart vendor.audio-hal-2-0
+    onrestart restart audio-hal-2-0
+
+on property:vts.native_server.on=1
+    stop audioserver
+on property:vts.native_server.on=0
+    start audioserver
+#[ALPS04217601] restart AudioServer to sync with AudioService
+on property:vold.decrypt=trigger_reset_main
+    restart audioserver
+
+on property:init.svc.audioserver=stopped
+    stop vendor.audio-hal
+    stop vendor.audio-hal-4-0-msd
+    # Keep the original service names for backward compatibility
+    stop vendor.audio-hal-2-0
+    stop audio-hal-2-0
+    # See b/155364397. Need to have HAL service running for VTS.
+    # Can't use 'restart' because then HAL service would restart
+    # audioserver bringing it back into running state.
+    start vendor.audio-hal
+    start vendor.audio-hal-4-0-msd
+    # Keep the original service names for backward compatibility
+    start vendor.audio-hal-2-0
+    start audio-hal-2-0
+
+on property:init.svc.audioserver=running
+    start vendor.audio-hal
+    start vendor.audio-hal-4-0-msd
+    # Keep the original service names for backward compatibility
+    start vendor.audio-hal-2-0
+    start audio-hal-2-0
+
+on property:sys.audio.restart.hal=1
+    # See b/159966243. Avoid restart loop between audioserver and HAL.
+    # Keep the original service names for backward compatibility
+    stop vendor.audio-hal
+    stop vendor.audio-hal-4-0-msd
+    stop vendor.audio-hal-2-0
+    stop audio-hal-2-0
+    start vendor.audio-hal
+    start vendor.audio-hal-4-0-msd
+    start vendor.audio-hal-2-0
+    start audio-hal-2-0
+    # reset the property
+    setprop sys.audio.restart.hal 0
+
+on init
+    mkdir /dev/socket/audioserver 0775 audioserver audioserver

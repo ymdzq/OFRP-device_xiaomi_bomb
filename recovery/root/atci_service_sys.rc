@@ -1,0 +1,11 @@
+service atci_service_sys /system/bin/atci_service_sys
+    class core
+    user root
+    disabled
+    group radio system
+
+on property:ro.build.type=eng
+start atci_service_sys
+
+on property:persist.vendor.service.atci.autostart=1
+start atci_service_sys

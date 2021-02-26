@@ -1,0 +1,4 @@
+service thermald /system/bin/thermald
+    class main
+    user system
+    group system net_admin

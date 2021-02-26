@@ -1,0 +1,34 @@
+on boot
+
+##Netlog tool
+   #change permissions about terminal
+    chown root radio /proc/net/vlan/config
+    chmod 0640 /proc/net/vlan/config
+    chown root radio /proc/net/ip6_tables_matches
+    chown root radio /proc/net/ip6_tables_names
+    chown root radio /proc/net/ip6_tables_targets
+    chown root radio /proc/net/arp_tables_targets
+    chown root radio /proc/net/arp_tables_matches
+    chown root radio /proc/net/arp_tables_names
+    chown root radio /proc/net/ip_tables_targets
+    chown root radio /proc/net/ip_tables_matches
+    chown root radio /proc/net/ip_tables_names
+    chown root radio /proc/net/ip_conntrack_expect
+    chown root radio /proc/net/ip_conntrack
+    chown root radio /proc/net/nf_conntrack
+    chown root radio /proc/net/nf_conntrack_expect
+    chown root radio /proc/net/netfilter/nfnetlink_log
+    chown root radio /proc/net/netfilter/nfnetlink_queue
+
+
+on post-fs-data
+ mkdir /data/debuglogger 0770 shell log
+
+service netdiag /system/bin/netdiag
+    class main
+    user shell
+    group log system radio sdcard_rw inet sdcard_r media_rw net_raw net_admin net_bw_stats readproc net_bt input
+    capabilities NET_ADMIN NET_RAW
+
+on property:persist.vendor.em.dy.debug=1
+    stop netdiag

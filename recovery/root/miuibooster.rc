@@ -1,0 +1,5 @@
+service miuibooster /system/xbin/miuibooster
+  class main
+  user root
+  socket miui_booster stream 660 system system
+  oneshot

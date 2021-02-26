@@ -1,0 +1,8 @@
+on post-fs-data
+ mkdir /data/system_de/mdfilter 0770 shell system
+
+service modemdbfilter_client /system/bin/modemdbfilter_client
+    class core
+    oneshot
+    user shell
+    group system

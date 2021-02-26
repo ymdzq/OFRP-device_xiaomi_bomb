@@ -1,0 +1,11 @@
+#on boot
+##LogProxyInSystem tool
+service loghidlsysservice /system/bin/loghidlsysservice
+    class main
+    user shell
+    group system
+    disabled
+on property:sys.boot_completed=1 && property:ro.boot.atm=enable
+   start loghidlsysservice
+
+

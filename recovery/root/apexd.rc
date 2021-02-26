@@ -1,0 +1,21 @@
+service apexd /system/bin/apexd
+    interface aidl apexservice
+    class core
+    user root
+    group system
+    oneshot
+    disabled # does not start with the core class
+    reboot_on_failure reboot,apexd-failed
+
+service apexd-bootstrap /system/bin/apexd --bootstrap
+    user root
+    group system
+    oneshot
+    disabled
+    reboot_on_failure reboot,bootloader,bootstrap-apexd-failed
+
+service apexd-snapshotde /system/bin/apexd --snapshotde
+    user root
+    group system
+    oneshot
+    disabled
