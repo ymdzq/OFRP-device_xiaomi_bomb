@@ -18,3 +18,6 @@
 
 LOCAL_PATH := device/xiaomi/bomb
 
+# dynamic partition stuff
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
