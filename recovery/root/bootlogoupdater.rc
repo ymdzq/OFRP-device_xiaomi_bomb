@@ -1,6 +1,0 @@
-
-# Update the second boot logo
-service bootlogoupdater /system/bin/boot_logo_updater
-    class core
-    oneshot
-    group graphics

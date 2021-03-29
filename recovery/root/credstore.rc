@@ -1,4 +1,0 @@
-service credstore /system/bin/credstore /data/misc/credstore
-    class core
-    user credstore
-    group credstore

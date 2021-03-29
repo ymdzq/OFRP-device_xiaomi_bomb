@@ -1,8 +1,0 @@
-#
-#   Telephony Early Read service
-#
-service terservice /system/bin/terservice
-    class core
-    user radio
-    group radio cache inet misc
-    oneshot

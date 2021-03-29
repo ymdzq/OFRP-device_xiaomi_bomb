@@ -1,4 +1,0 @@
-service gpu /system/bin/gpuservice
-    class core
-    user gpu_service
-    group graphics

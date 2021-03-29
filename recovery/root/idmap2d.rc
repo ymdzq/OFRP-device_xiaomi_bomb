@@ -1,4 +1,0 @@
-service idmap2d /system/bin/idmap2d
-    class main
-    user system
-    group system
