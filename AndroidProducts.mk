@@ -18,3 +18,8 @@
 
 PRODUCT_MAKEFILES := \
      $(LOCAL_DIR)/omni_bomb.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_bomb-user \
+    omni_bomb-userdebug \
+    omni_bomb-eng
