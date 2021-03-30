@@ -16,5 +16,11 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_bomb-userdebug
-add_lunch_combo omni_bomb-eng
+	# build info
+    export OF_MAINTAINER=ymdzq
+	# screen settings
+	export OF_SCREEN_H=2400
+	export OF_STATUS_H=100
+	export OF_STATUS_INDENT_LEFT=48
+	export OF_STATUS_INDENT_RIGHT=48
+    export OF_ALLOW_DISABLE_NAVBAR=0
