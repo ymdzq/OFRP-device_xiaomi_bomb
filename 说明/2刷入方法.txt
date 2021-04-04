@@ -1,0 +1,9 @@
+获得最终的recovery镜像之后，需要手机连接电脑线刷
+手动重启至米兔模式（bootloader）
+使用fastboot工具先禁用验证，然后再把rec镜像刷入rec分区，重启进入rec，命令：
+
+fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
+fastboot flash recovery OrangeFox-Unofficial-bomb.img
+fastboot reboot recovery
+
+温馨提示：mtk机型刷recovery有风险，如果错误的刷入未经验证的recovery可能会导致设备无法开机，无限重启，且无法进入recovery和fastboot，请先确保你有救回的办法再尝试

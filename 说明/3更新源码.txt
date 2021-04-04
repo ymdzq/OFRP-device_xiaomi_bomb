@@ -1,0 +1,15 @@
+1.更新整个项目源码，就用这个命令（包含下面的2和3，无需重复执行2、3，不包含4）
+cd ~/OrangeFox_10/sync
+./update_fox_10.sh ~/OrangeFox_10/fox_10.0
+
+2.只单独更新橙狐recovery资源，不更新整个项目，用这个命令
+cd ~/OrangeFox_10/fox_10.0/bootable/recovery
+git pull
+
+3.只单独更新橙狐vendor目录，不更新整个项目，用这个命令
+cd ~/OrangeFox_10/fox_10.0/vendor/recovery
+git pull
+
+4.更新device目录，用这个命令（device目录需要手动更新，不包含在1的update_fox_10.sh脚本里）
+cd ~/OrangeFox_10/fox_10.0/device/xiaomi/bomb
+git pull
