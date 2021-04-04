@@ -32,6 +32,8 @@
 /tee1             emmc     /dev/block/platform/bootdevice/by-name/tee1         flags=display="trustzone1";backup=1;flashimg=1
 /tee2             emmc     /dev/block/platform/bootdevice/by-name/tee2         flags=display="trustzone2";backup=1;flashimg=1
 /vbmeta           emmc     /dev/block/platform/bootdevice/by-name/vbmeta       flags=display="vbmeta";backup=1;flashimg=1
+/vbmeta_system    emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="vbmeta_system";backup=1;flashimg=1
+/vbmeta_vendor    emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="vbmeta_vendor";backup=1;flashimg=1
 
 /para             emmc     /dev/block/platform/bootdevice/by-name/para
 /misc             emmc     /dev/block/platform/bootdevice/by-name/misc
