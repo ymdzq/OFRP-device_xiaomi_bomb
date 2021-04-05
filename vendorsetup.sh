@@ -15,12 +15,62 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# 关于橙狐变量详见 OrangeFox_10/fox_10.0/vendor/recovery/orangefox_build_vars.txt
 
-	# build info
+    ## 设置显示在关于页面里的维护人员名称
     export OF_MAINTAINER=ymdzq
-	# screen settings
+
+    ## 添加功能
+	# 使用完整版ps命令
+	export FOX_REPLACE_BUSYBOX_PS=1
+	# 使用完整版getprop命令
+	export FOX_REPLACE_TOOLBOX_GETPROP=1
+	# 支持tar命令
+	export FOX_USE_TAR_BINARY=1
+	# 支持sed命令
+	export FOX_USE_SED_BINARY=1
+	# 使用bash代替sh和ash
+	export FOX_USE_BASH_SHELL=1
+	export FOX_ASH_IS_BASH=1
+	# 使用完整版grep命令
+	export FOX_USE_GREP_BINARY=1
+	# 支持lzma, xz命令
+	export FOX_USE_XZ_UTILS=1
+
+    ## 添加橙狐特殊处理
+	# 使用magisk处理boot镜像
+	export OF_USE_MAGISKBOOT=1
+    # 使用magisk处理所有boot和recovery镜像
+	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
+	# 尝试处理AVB2.0，防止橙狐被官方recovery替换
+	export OF_PATCH_AVB20=1
+
+	## 硬件功能设定
+	# 没有绿色led
+	export OF_USE_GREEN_LED=0
+	# 关闭闪光灯功能
+	# export OF_FLASHLIGHT_ENABLE=0
+	# 自定义闪光灯路径，修复闪光灯
+    export OF_FL_PATH1=/sys/class/leds/torch-light0
+    export OF_FL_PATH2=/sys/class/leds/torch-light1
+    export OF_FL_PATH3=/sys/class/leds/torch-light2
+	
+	## 界面显示设定
+    # 设置屏幕高度，状态栏高度，状态栏左右边距
 	export OF_SCREEN_H=2400
-	export OF_STATUS_H=100
-	export OF_STATUS_INDENT_LEFT=48
-	export OF_STATUS_INDENT_RIGHT=48
+	export OF_STATUS_H=59
+	export OF_STATUS_INDENT_LEFT=90
+	export OF_STATUS_INDENT_RIGHT=90
+	# 添加黑色状态栏（隐藏刘海）选项
+	export OF_HIDE_NOTCH=1
+	# 由于有刘海遮挡，设置时钟位置为只能显示在左侧或右侧
+	export OF_CLOCK_POS=1
+    # 禁止禁用导航栏
     export OF_ALLOW_DISABLE_NAVBAR=0
+
+    ## 使刷机包兼容红米10X 5G和红米10X Pro
+	# 使红米10X 5G和红米10X Pro都能刷入橙狐zip卡刷包
+	export TARGET_DEVICE_ALT="atom, bomb"
+	# 使橙狐可以刷入具有机型检测限制为红米10X 5G或者红米10X Pro的zip卡刷包
+	export OF_TARGET_DEVICES="atom,bomb"
+
