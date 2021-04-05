@@ -23,17 +23,16 @@ DEVICE_PATH := device/xiaomi/bomb
 # Inherit from bomb device
 $(call inherit-product, device/xiaomi/bomb/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
-
-#PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := bomb
 PRODUCT_NAME := omni_bomb
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi 10X Pro
+PRODUCT_MODEL := M2004J7BC
 PRODUCT_MANUFACTURER := Xiaomi
 #PRODUCT_RELEASE_NAME := Redmi 10X Pro
 
