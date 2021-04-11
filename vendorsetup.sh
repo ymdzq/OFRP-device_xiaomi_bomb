@@ -82,6 +82,12 @@
 	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/bootdevice/by-name/recovery"
     export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
     export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
+	# 避免在已加密设备上应用强制加密补丁
+	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
+	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
+	export OF_SKIP_FBE_DECRYPTION=1
+	# 防止橙狐在解密后重新运行自启动进程
+    export OF_NO_RELOAD_AFTER_DECRYPTION=1
     # 使用指定的magisk
     # export FOX_USE_SPECIFIC_MAGISK_ZIP="~/magisk/Magisk22.0.zip"
 
