@@ -5,7 +5,7 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 # <mount_point>  <fstype>  <device>        <device2>                  <flags>
-/data             ext4     /dev/block/platform/bootdevice/by-name/userdata     flags=fileencryption=aes-256-cts
+/data             auto     /dev/block/platform/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v1
 /cache            ext4     /dev/block/platform/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
 /system_root      ext4     /dev/block/mapper/system                            flags=backup=0
 #/system_image     emmc     /dev/block/mapper/system                            flags=backup=0;flashimg=0
@@ -40,6 +40,6 @@
 /persistent       emmc     /dev/block/platform/bootdevice/by-name/frp
 
 
-/external_sd      vfat     /dev/block/mmcblk0p1  /dev/block/mmcblk0            flags=display="external_sd";storage;wipeingui;removable;fsflags="utf8"
-/usb-otg          vfat     /dev/block/sdd1  /dev/block/sdd                     flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
+/external_sd      auto     /dev/block/mmcblk0p1  /dev/block/mmcblk0            flags=display="external_sd";storage;wipeingui;removable;fsflags="utf8"
+/usb-otg          auto     /dev/block/sdd1  /dev/block/sdd                     flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
 
