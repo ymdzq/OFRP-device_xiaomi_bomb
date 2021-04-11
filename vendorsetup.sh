@@ -78,7 +78,8 @@
     export OF_TARGET_DEVICES="atom,bomb"
 
     ## 技术性调整
-    # 设定system、vendor分区路径
+    # 设定recovery、system、vendor分区路径
+	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/bootdevice/by-name/recovery"
     export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
     export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
     # 使用指定的magisk
