@@ -5,7 +5,7 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 # <mount_point>  <fstype>  <device>        <device2>                  <flags>
-/data             auto     /dev/block/platform/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v1
+/data             ext4     /dev/block/platform/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v1
 /cache            ext4     /dev/block/platform/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
 /system_root      ext4     /dev/block/mapper/system                            flags=backup=0
 #/system_image     emmc     /dev/block/mapper/system                            flags=backup=0;flashimg=0
@@ -31,9 +31,9 @@
 /logo             emmc     /dev/block/platform/bootdevice/by-name/logo         flags=display="logo"
 /tee1             emmc     /dev/block/platform/bootdevice/by-name/tee1         flags=display="trustzone1"
 /tee2             emmc     /dev/block/platform/bootdevice/by-name/tee2         flags=display="trustzone2"
-/vbmeta           emmc     /dev/block/platform/bootdevice/by-name/vbmeta       flags=display="vbmeta";backup=1;flashimg=1
-/vbmeta_system    emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="vbmeta_system";backup=1;flashimg=1
-/vbmeta_vendor    emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="vbmeta_vendor";backup=1;flashimg=1
+/vbmeta           emmc     /dev/block/platform/bootdevice/by-name/vbmeta       flags=display="vbmeta";flashimg=1
+/vbmeta_system    emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="vbmeta_system";flashimg=1
+/vbmeta_vendor    emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="vbmeta_vendor";flashimg=1
 
 /para             emmc     /dev/block/platform/bootdevice/by-name/para
 /misc             emmc     /dev/block/platform/bootdevice/by-name/misc
