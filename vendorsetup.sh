@@ -48,7 +48,7 @@
     # 使用magisk处理所有boot和recovery镜像
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
     # 尝试处理AVB2.0，防止橙狐被官方recovery替换
-    export OF_PATCH_AVB20=1
+    #export OF_PATCH_AVB20=1
 
     ## 硬件功能设定
     # 没有绿色led
