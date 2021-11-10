@@ -39,6 +39,8 @@
     export FOX_USE_GREP_BINARY=1
     # 支持lzma, xz命令
     export FOX_USE_XZ_UTILS=1
+    # 使用橙狐编译的NANO编辑器
+    export FOX_USE_NANO_EDITOR=1
 
     ## 添加橙狐特殊处理
     # 使用magisk处理boot镜像
