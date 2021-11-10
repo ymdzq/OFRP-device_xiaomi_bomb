@@ -80,10 +80,11 @@
     export OF_TARGET_DEVICES="atom,bomb"
 
     ## 技术性调整
-    # 设定recovery、system、vendor分区路径
+    # 设定recovery、system、vendor、boot分区路径
 	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/bootdevice/by-name/recovery"
     export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
     export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
+    export FOX_RECOVERY_BOOT_PARTITION="/dev/block/platform/bootdevice/by-name/boot"
 	# 避免在已加密设备上应用强制加密补丁
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
