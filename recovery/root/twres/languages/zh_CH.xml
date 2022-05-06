@@ -491,6 +491,7 @@
 		<string name="mtp_already_enabled">MTP 已启用</string>
 		<string name="mtp_fail">启用 MTP 失败</string>
 		<string name="no_mtp">不含 MTP 支持</string>
+		<string name="mtp_base_path_missing">找不到 Media 存储。无法启用MTP。</string>
 		<string name="image_flash_start">[映像刷入开始]</string>
 		<string name="img_to_flash">要刷入的镜像：'{1}'</string>
 		<string name="flash_unable_locate">无法定位要刷入的 '{1}' 分区。</string>
@@ -1185,9 +1186,7 @@
 		<string name="img_advanced">高级刷入</string>
 		<string name="img_type">镜像类型</string>
 		<string name="img_select_type">选择镜像类型</string>
-		
-		<string name="recovery_ramdisk">Recovery Ramdisk</string>
-		<string name="kernel">内核</string>
+		<string name="repack_overwrite_warning">如果设备之前已获取Root权限，则Root权限已被覆盖，需要重新安装。</string>		
 
 		<string name="repack_backup_first">先备份现有镜像</string>
 
@@ -1197,7 +1196,6 @@
 		<string name="repacking_image">正在重新打包 {1}...</string>
 		
 		<string name="fix_recovery_loop">修复 Recovery 引导循环</string>
-		<string name="fix_recovery_loop_confirm">是否修复 Recovery 引导循环？</string>
 		<string name="fixing_recovery_loop">正在修复 Recovery 引导循环...</string>
 		<string name="fix_recovery_loop_complete">修复 Recovery 引导循环完成</string>
 		<string name="fixing_recovery_loop_patch">正在修补内核...</string>
@@ -1231,5 +1229,19 @@
 		<string name="status_delimeter_shadow">阴影</string>
 
 		<string name="mount_vab_partitions">super分区设备在你重新启动recovery之前，可能无法装载。</string>
+		<string name="merges_snapshots">合并快照</string>
+		<string name="merging_snapshots">正在合并快照...</string>
+		<string name="merging_snapshots_complete">快照已合并</string>
+		
+		<string name="unmap_super_devices">取消映射 Super 设备</string>
+		<string name="unmapping_super_devices">正在取消映射 Super 设备...</string>
+		<string name="unmap_super_devices_complete">已取消映射所有 Super 设备</string>
+
+		<string name="auto_reflashtwrp_chk">刷入 ROM 之后自动重刷 OrangeFox</string>
+		<string name="modified_ramdisk_error">ramdisk文件已被修改，无法创建需要刷入的ramdisk。请使用fastboot boot 命令启动 OrangeFox 并再次尝试此选项，或者返回文件浏览并使用安装 Ramdisk 按钮将img文件安装为Recovery Ramdisk。</string>
+		<string name="create_ramdisk_error">无法创建需要刷入的ramdisk。</string>
+		<string name="reflash_twrp">刷入当前使用的 OrangeFox</string>
+		<string name="reflashing_twrp">正在刷入 OrangeFox...</string>
+		<string name="reflash_twrp_complete">刷入 OrangeFox 已完成</string>
 	</resources>
 </language>
