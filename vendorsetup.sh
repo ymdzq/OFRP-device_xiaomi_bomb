@@ -76,8 +76,8 @@
     ## 使刷机包兼容红米10X 5G和红米10X Pro
     # 使红米10X 5G和红米10X Pro都能刷入橙狐zip卡刷包
     export TARGET_DEVICE_ALT="atom, bomb"
-    # 使橙狐可以刷入具有机型检测限制为红米10X 5G或者红米10X Pro的zip卡刷包
-    export OF_TARGET_DEVICES="atom,bomb"
+    # 使橙狐可以刷入具有机型检测限制为红米10X 5G或者红米10X Pro的zip卡刷包，与TARGET_OTA_ASSERT_DEVICE冲突
+    # export OF_TARGET_DEVICES="atom,bomb"
 
     # 设定recovery、system、vendor、boot分区路径
     export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
