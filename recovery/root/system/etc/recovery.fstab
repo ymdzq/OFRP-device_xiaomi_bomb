@@ -108,13 +108,11 @@ product /product ext4 ro wait,,avb,logical,first_stage_mount
 
 /dev/block/by-name/pi_img /pi_img emmc defaults defaults
 /dev/block/by-name/boot_para /boot_para emmc defaults defaults
-
 /dev/block/by-name/odmdtbo /odmdtbo emmc defaults defaults
 /dev/block/by-name/dtbo /dtbo emmc defaults defaults
-
 
 /dev/block/by-name/otp /otp emmc defaults defaults
 
 
 /dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
-/dev/block/platform/bootdevice/by-name/cust /cust ext4 ro,nosuid,nodev,barrier=1 wait,check
+/dev/block/by-name/cust /cust ext4 ro,nosuid,nodev,barrier=1 wait,check
