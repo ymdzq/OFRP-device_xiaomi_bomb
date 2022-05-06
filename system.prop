@@ -1,16 +1,21 @@
-ro.secure=0
+# ADB
 ro.adb.secure=0
-ro.build.date.utc=1420041600
+
+# USB
+ro.sys.usb.storage.type=mtp
+
+# Crypto
+ro.crypto.volume.filenames_mode=aes-256-cts
+
+# TEE
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_microtrust_tee_support=1
+
+# Gatekeeper
+ro.hardware.gatekeeper=beanpod
+
+# Kmsetkey
+ro.hardware.kmsetkey=beanpod
+
+# Timezone
 persist.sys.timezone=Asia/Shanghai
-ro.sf.lcd_density=440
-
-# for device
-ro.treble.enabled=true
-
-ro.product.marketname=Redmi 10X Pro
-ro.vendor.mediatek.platform=MT6873
-ro.frp.pst=/dev/block/by-name/frp
-
-
-ro.boot.init_rc=/init.rc
-
