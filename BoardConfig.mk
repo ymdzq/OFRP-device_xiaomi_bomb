@@ -89,6 +89,7 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 
 # System as root
+BOARD_ROOT_EXTRA_FOLDERS := cache cust product
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Recovery
