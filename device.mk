@@ -10,3 +10,6 @@ LOCAL_PATH := device/xiaomi/bomb
 # dynamic partition stuff
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Vibrator
+PRODUCT_PACKAGES += \
+	android.hardware.vibrator@1.3-service.mtk.recovery
