@@ -1,8 +1,10 @@
 获得最终的recovery镜像之后，需要手机连接电脑线刷
-手动重启至米兔模式（bootloader）
-使用fastboot工具先禁用验证，然后再把rec镜像刷入rec分区，重启进入rec，命令：
+手动重启至bootloader模式（橘红色fastboot字样）
+# 使用fastboot工具先禁用avb验证
+# （理论上不需要了，magisk24+会自动处理avb验证，而安卓11分支生成的橙狐rec已经用magisk24+处理过了），
+然后再把rec镜像刷入rec分区，重启进入rec，命令：
 
-fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
+# fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 fastboot flash recovery OrangeFox-Unofficial-bomb.img
 fastboot reboot recovery
 
