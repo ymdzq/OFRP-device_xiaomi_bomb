@@ -7,8 +7,12 @@
 
 LOCAL_PATH := device/xiaomi/bomb
 
-# dynamic partition stuff
+# Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# API
+PRODUCT_TARGET_VNDK_VERSION := 31
+PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Vibrator
 PRODUCT_PACKAGES += \
