@@ -9,7 +9,7 @@
     export LC_ALL="C"
     export ALLOW_MISSING_DEPENDENCIES=true
 
-	echo -e "\x1b[96mbomb: 开始添加OrangeFox Vars...\x1b[m"
+    echo -e "\x1b[96mbomb: 开始添加OrangeFox Vars...\x1b[m"
     ## 构建信息
     # 设置显示在关于页面里的维护人员名称
     export OF_MAINTAINER=ymdzq
@@ -40,7 +40,7 @@
     ## 添加橙狐特殊处理
     # 当安装MIUI或者在MIUI上安装橙狐zip，使用magisk处理所有boot和recovery镜像，防止橙狐被MIUI官方recovery替换
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
-	# 防止用户在不使用metadata加密的ROM中重复被metadata装载错误提示刷屏
+    # 防止用户在不使用metadata加密的ROM中重复被metadata装载错误提示刷屏
     export OF_FBE_METADATA_MOUNT_IGNORE=1
     # 尝试处理AVB2.0，防止橙狐被官方recovery替换，实测此机型无效
     # export OF_PATCH_AVB20=1
@@ -60,7 +60,7 @@
 
     ## 界面显示设定
     # 设置屏幕高度，状态栏高度，状态栏左右边距
-	#由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
+    # 由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
     export OF_SCREEN_H=2400
     export OF_STATUS_H=59
     export OF_STATUS_INDENT_LEFT=90
@@ -73,7 +73,7 @@
     export OF_ALLOW_DISABLE_NAVBAR=0
 
     ## 技术性调整
-    ## 使刷机包兼容红米10X 5G和红米10X Pro
+    # 使刷机包兼容红米10X 5G和红米10X Pro
     # 使红米10X 5G和红米10X Pro都能刷入橙狐zip卡刷包
     export TARGET_DEVICE_ALT="atom, bomb"
     # 使橙狐可以刷入具有机型检测限制为红米10X 5G或者红米10X Pro的zip卡刷包，与TARGET_OTA_ASSERT_DEVICE冲突
@@ -96,8 +96,8 @@
     # 防止橙狐在解密后重新运行自启动进程
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
     # 使用指定的magisk
-    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/Shiro/Magisk.zip"
-	# 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
-	export MAGISK_VER=24.3
+    export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
+    # 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
+    export MAGISK_VER=24.3
 
     echo -e "\x1b[96mbomb: 当你看到这个消息的时候，所有的OrangeFox Var已经添加完毕！\x1b[m"
