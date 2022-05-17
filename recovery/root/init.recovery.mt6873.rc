@@ -11,6 +11,10 @@ on fs
     install_keyring
 
 on post-fs
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/f0_save
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/osc_save
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/7-005a/f0_save
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/7-005a/osc_save
     start boot-hal-1-1
 
 on early-fs
@@ -18,7 +22,7 @@ on early-fs
     write /proc/sys/kernel/sched_lib_mask_force 255
 
 on boot
-    start vibrator-1-3
+    start vendor.mtk.vibrator-1-2
     start health-hal-2-1
     setprop sys.usb.config adb
 
@@ -48,7 +52,7 @@ service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service.bean
     disabled
     seclabel u:r:recovery:s0
 
-service vibrator-1-3 /system/bin/hw/android.hardware.vibrator@1.3-service.mtk
+service vendor.mtk.vibrator-1-2 /vendor/bin/hw/vendor.mtk.hardware.vibrator@1.2-service
     class hal
     disabled
     user root
