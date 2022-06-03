@@ -17,10 +17,6 @@ on post-fs
     chown system system /sys/bus/i2c/drivers/aw8697_haptic/7-005a/osc_save
     start boot-hal-1-1
 
-on early-fs
-    write /proc/sys/kernel/sched_lib_name "recovery,Updater,updater"
-    write /proc/sys/kernel/sched_lib_mask_force 255
-
 on boot
     start health-hal-2-1
     start vendor.mtk.vibrator-1-2
