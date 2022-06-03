@@ -22,8 +22,8 @@ on early-fs
     write /proc/sys/kernel/sched_lib_mask_force 255
 
 on boot
-    start vendor.mtk.vibrator-1-2
     start health-hal-2-1
+    start vendor.mtk.vibrator-1-2
     setprop sys.usb.config adb
 
 service keystore_auth /system/bin/keystore_auth
