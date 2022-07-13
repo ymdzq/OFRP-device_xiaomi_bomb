@@ -95,6 +95,8 @@
     export OF_OTA_RES_DECRYPT=1
     # 防止橙狐在解密后重新运行自启动进程
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
+	# 关闭修改橙狐启动画面功能，这个功能可能会导致重启无限卡MI
+    export OF_NO_SPLASH_CHANGE=1
     # 使用指定的magisk
     export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
     # 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
