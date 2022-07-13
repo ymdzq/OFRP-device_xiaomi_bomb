@@ -13,8 +13,8 @@ on fs
 on post-fs
     chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/f0_save
     chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/osc_save
-    chown system system /sys/bus/i2c/drivers/aw8697_haptic/7-005a/f0_save
-    chown system system /sys/bus/i2c/drivers/aw8697_haptic/7-005a/osc_save
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/6-005a/custom_wave
+    chmod 0666  /sys/bus/i2c/drivers/aw8624_haptic/6-005a/custom_wave
     start boot-hal-1-1
 
 on boot
