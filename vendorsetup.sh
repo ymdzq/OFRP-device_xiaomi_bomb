@@ -92,7 +92,7 @@
     # 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
     # export OF_SKIP_FBE_DECRYPTION=1
     # 当ROM大于等于指定安卓SDK等级时，跳过FBE解密流程
-    export OF_SKIP_FBE_DECRYPTION_SDKVERSION=31
+    # export OF_SKIP_FBE_DECRYPTION_SDKVERSION=31
     # 在MIUI OTA还原期间尝试解密内部存储（而不是错误退出）
     export OF_OTA_RES_DECRYPT=1
     # 防止橙狐在解密后重新运行自启动进程
