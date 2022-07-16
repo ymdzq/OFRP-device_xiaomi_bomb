@@ -44,6 +44,8 @@
     export OF_FBE_METADATA_MOUNT_IGNORE=1
     # 尝试处理AVB2.0，防止橙狐被官方recovery替换，实测此机型无效
     # export OF_PATCH_AVB20=1
+    # 修复部分设备或者rom的解密问题
+    export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
     # 当修补recovery/boot镜像时，始终指示magiskboot v24+修补vbmeta标头（自动禁用avb验证？）
     export OF_PATCH_VBMETA_FLAG=1
 
