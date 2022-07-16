@@ -100,6 +100,6 @@
     # 使用指定的magisk
     export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
     # 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
-    export MAGISK_VER=24.3
+    export MAGISK_VER=25.1
 
     echo -e "\x1b[96mbomb: 当你看到这个消息的时候，所有的OrangeFox Var已经添加完毕！\x1b[m"
