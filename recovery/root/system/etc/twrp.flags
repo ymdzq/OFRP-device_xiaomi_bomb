@@ -4,7 +4,7 @@
 
 # mount point       fstype    device                                                                flags
 
-/data               ext4     /dev/block/by-name/userdata                     flags=display="Data";fileencryption=aes-256-cts
+/data               ext4     /dev/block/by-name/userdata                     flags=display="Data";fileencryption=aes-256-xts:aes-256-cts:v1
 /cache              ext4     /dev/block/by-name/cache                        flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
 /storage            ext4     /data/media/0				     flags=display="Internal Storage";backup=1;usermrf;fsflags="bind";removable
 
