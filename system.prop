@@ -14,8 +14,5 @@ ro.vendor.mtk_microtrust_tee_support=1
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 
-# Kmsetkey
-ro.hardware.kmsetkey=beanpod
-
 # Timezone
 persist.sys.timezone=Asia/Shanghai
