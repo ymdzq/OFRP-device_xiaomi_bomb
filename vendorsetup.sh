@@ -87,6 +87,8 @@
     export OF_OTA_RES_DECRYPT=1
     # 防止橙狐在解密后重新运行自启动进程
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
+    # 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
+	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
     # 防止用户在不使用metadata加密的ROM中重复被metadata装载错误提示刷屏
     export OF_FBE_METADATA_MOUNT_IGNORE=1
     # 尝试处理AVB2.0，防止橙狐被官方recovery替换，实测此机型无效
