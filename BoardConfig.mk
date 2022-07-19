@@ -123,6 +123,11 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_NTFS_3G := true
 TARGET_USES_MKE2FS := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 2047
+TW_DEFAULT_BRIGHTNESS := 200
+
+# Language
 TW_DEFAULT_LANGUAGE := "zh_CH"
 
 # Debug
