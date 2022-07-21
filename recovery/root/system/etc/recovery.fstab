@@ -11,6 +11,8 @@ vendor /vendor ext4 ro wait,,avb,logical,first_stage_mount
 product /product ext4 ro wait,,avb,logical,first_stage_mount
 /dev/block/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt wait,check,formattable,quota,reservedsize=128m,latemount,resize,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v1
 /dev/block/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check,formattable
+/dev/block/by-name/para /para emmc defaults defaults
+/dev/block/by-name/misc /misc emmc defaults defaults
 /dev/block/by-name/expdb /expdb emmc defaults defaults
 /dev/block/by-name/seccfg /seccfg emmc defaults defaults
 /dev/block/by-name/scp1 /scp1 emmc defaults defaults
