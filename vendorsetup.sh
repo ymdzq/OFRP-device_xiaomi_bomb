@@ -91,6 +91,8 @@
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 	# 防止用户在不使用metadata加密的ROM中重复被metadata装载错误提示刷屏
 	export OF_FBE_METADATA_MOUNT_IGNORE=1
+	# 手动刷入OTA增量包时尝试进入OpenRecoveryScript模式完成更新
+	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 	# 尝试处理AVB2.0，防止橙狐被官方recovery替换，实测此机型无效
 	# export OF_PATCH_AVB20=1
 	# 关闭修改橙狐启动画面功能，这个功能可能会导致重启无限卡MI
