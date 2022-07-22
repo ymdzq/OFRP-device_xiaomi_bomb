@@ -1,6 +1,6 @@
 构建橙狐recovery镜像步骤说明，参考橙狐官方wiki页面
 https://wiki.orangefox.tech/en/dev/building
-需要一台电脑，至少50G硬盘空间，建议100G以上(build系统本身30g-35g，每一个设备实际6g以上，如果用ccache还得算上ccache缓存)，运行内存要8g以上（安卓11以上最少16g，20g以上更好），需要Linux系统，推荐使用debian系的发行版（比如Ubuntu、Linux Mint等）。ArchLinux也能用，但是挺麻烦的，至于其他发行版你自己看着办。
+需要一台电脑，至少50G硬盘空间，建议100G以上(build系统本身35g-45g，每一个设备实际6g以上，如果用ccache还得算上ccache缓存)，运行内存安卓10至少要8g以上（安卓11最少16g，20g以上更好，安卓12最少20g，24以上更好），需要Linux系统，推荐使用debian系的发行版（比如Ubuntu、Linux Mint等）。ArchLinux也能用，但是挺麻烦的，至于其他发行版你自己看着办。
 不推荐使用root权限构建
 
 0.准备环境（debian系的发行版，会自动安装需要的软件包、设置git信息、设置adb规则、安装安卓sdk，其他发行版需要手动准备，这个部分只用第一次，以后不用运行了）
@@ -14,6 +14,7 @@ sudo bash setup/install_android_sdk.sh
 如果repo安装失败（高概率，网址被墙），可能需要手动安装repo命令，可以考虑用sudo apt install repo或者去清华源或者中科大源，根据说明下载手动安装
 我不是很确定这里装没装ccache（用来在构建的时候留下缓存，据说能加快下一次构建速度），如果没装，你可以手动装一个
 最后获得recovery镜像时有一步是用java8来签名，虽然没有java8也能跳过签名得到img镜像，但是如果你介意的话，可以手动安装一个openjdk-8-jdk
+(仅适用于安卓10。安卓11以上版本已自带jdk，无需额外安装)
 
 1.下载橙狐源码（用安卓10分支举例）
 a.使用rsync（很慢）
@@ -40,6 +41,7 @@ cd ~/OrangeFox_sync
   5.删除“recovery”子目录，并将OrangeFox源码克隆到新的“recovery”子目录中
   6.在终端里cd进manifest的“vendor”子目录
   7.将OrangeFox vendor源码克隆到新的“recovery”子目录中
+  （8.安卓12分支由于上游twrp12仍在开发中，目前即使完成上述步骤，仍然会编译失败，所以需要额外手动打补丁，具体方法orangefox_sync.sh脚本里有提到）
 
 举个例子，第4、5步打开~/fox_11.0/bootable目录，检查recovery文件夹里面到底是橙狐的源码还是twrp的源码，如果是twrp的就删除整个recovery文件夹，用这个命令下载橙狐的rec源码
 cd ~/fox_11.0/bootable
@@ -55,11 +57,12 @@ cd ~/fox_11.0
 mkdir -p device/xiaomi
 cd device/xiaomi
 git clone https://github.com/ymdzq/OFRP-device_xiaomi_bomb.git bomb
+（这里仅供参考，截至目前由于bomb适配a12分支已经基本完成，而a11分支仍然无法解密，所以我把a11分支删了，没想到吧）
 
 3.开始构建
 cd ~/fox_11.0
 source build/envsetup.sh
-lunch twrp_bomb-eng && mka recoveryimage
+lunch twrp_bomb-eng && mka adbd recoveryimage
 也可以参考安卓10分支的脚本~/OrangeFox_sync/sync/legacy/build_fox.sh（已经过时，需要修改）
 
 这里如果有需要清理之前构建生成的文件重新构建
