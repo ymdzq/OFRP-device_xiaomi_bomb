@@ -13,3 +13,12 @@ git pull
 4.更新device目录，用这个命令（device目录需要手动更新，不包含在1的update_fox.sh脚本里）
 cd ~/fox_11.0/device/xiaomi/bomb
 git pull
+
+（5.安卓12分支由于上游twrp12仍在开发中，目前需要额外手动打补丁，
+补丁来自https://gerrit.twrp.me
+必须打的补丁是5540，目前补丁集版本为7
+cd ~/fox_12.1/system/vold/;
+git fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/7 && git cherry-pick FETCH_HEAD;
+其他补丁仅功能类，不影响编译的成功与否，也可能后续twrp官方会收入上游仓库更新中，这种情况就无需重复应用
+可以参考我自用的更新脚本
+https://github.com/ymdzq/scripts/blob/main/fox12-update）
