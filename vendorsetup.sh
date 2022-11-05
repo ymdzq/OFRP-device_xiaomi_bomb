@@ -95,14 +95,16 @@
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 	# 尝试处理AVB2.0，防止橙狐被官方recovery替换，实测此机型无效
 	# export OF_PATCH_AVB20=1
+	# 在具有此功能的自定义ROM上支持基于块的增量OTA
+	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	# 关闭修改橙狐启动画面功能，这个功能可能会导致重启无限卡MI
 	export OF_NO_SPLASH_CHANGE=1
 	# 禁用橙狐内置的magisk菜单
-	export FOX_DELETE_MAGISK_ADDON=1
+	# export FOX_DELETE_MAGISK_ADDON=1
 	# 使用指定的magisk
-	export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
+	# export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
 	# 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
-	export MAGISK_VER=25.2
+	# export MAGISK_VER=25.2
 	# 当修补recovery/boot镜像时，始终指示magiskboot v24+修补vbmeta标头（自动禁用avb验证？）
 	export OF_PATCH_VBMETA_FLAG=1
 	# 修复部分设备或者rom的解密问题
