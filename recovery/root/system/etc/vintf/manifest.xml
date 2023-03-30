@@ -2,7 +2,7 @@
     Input:
         manifest.xml
 -->
-<manifest version="4.0" type="framework">
+<manifest version="2.0" type="framework">
     <hal format="hidl">
         <name>android.frameworks.displayservice</name>
         <transport>hwbinder</transport>
@@ -13,7 +13,7 @@
         </interface>
         <fqname>@1.0::IDisplayService/default</fqname>
     </hal>
-    <hal format="hidl" max-level="5">
+    <hal format="hidl">
         <name>android.frameworks.schedulerservice</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -91,6 +91,5 @@
         <version>28</version>
         <version>29</version>
         <version>30</version>
-        <version>31</version>
     </system-sdk>
 </manifest>

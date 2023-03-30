@@ -23,12 +23,10 @@ on boot
     setprop sys.usb.config adb
 
 on property:vendor.sys.listeners.registered=true
-    start keymaster-4-1
+    start keymaster-4-0
     start gatekeeper-1-0
 
-service keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
-    interface android.hardware.keymaster@4.0::IKeymasterDevice default
-    interface android.hardware.keymaster@4.1::IKeymasterDevice default
+service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
     user root
     group root drmrpc
     disabled
