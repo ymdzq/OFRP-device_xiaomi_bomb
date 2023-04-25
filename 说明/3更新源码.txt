@@ -22,10 +22,10 @@ git pull
 
 （5.安卓12分支由于上游twrp12仍在开发中，目前需要额外手动打system vold补丁，只要在初次安装之后运行过repo sync，就需要再次pick补丁
 补丁来自https://gerrit.twrp.me
-必须打的补丁是5540，目前补丁集版本为13
+必须打的补丁是6236，目前补丁集版本为19
 cd ~/fox_12.1/system/vold/
-git fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/13 && git cherry-pick FETCH_HEAD
+git fetch https://gerrit.twrp.me/android_system_vold refs/changes/36/6236/19 && git cherry-pick FETCH_HEAD
 其他补丁仅功能类，不影响编译的成功与否，也可能后续twrp官方会收入上游仓库更新中，这种情况就无需重复应用）
 
 也可以参考我自用的更新脚本
-https://github.com/ymdzq/scripts/blob/main/fox12-update
+https://github.com/ymdzq/scripts/blob/main/fox-update
