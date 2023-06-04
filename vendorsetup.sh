@@ -6,6 +6,7 @@
 #
 # 关于橙狐变量详见 OrangeFox_10/fox_10.0/vendor/recovery/orangefox_build_vars.txt
 
+	export TW_DEFAULT_LANGUAGE="zh_CN"
 	export LC_ALL="C"
 	export ALLOW_MISSING_DEPENDENCIES=true
 
@@ -117,5 +118,7 @@
 	export OF_PATCH_VBMETA_FLAG=1
 	# 修复部分设备或者rom的解密问题
 	export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
+	# 设置默认时区为北京时间
+	export OF_DEFAULT_TIMEZONE="TAIST-8;TAIDT"
 
 	echo -e "\x1b[96mbomb: 当你看到这个消息的时候，所有的OrangeFox Var已经添加完毕！\x1b[m"
