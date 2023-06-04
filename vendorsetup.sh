@@ -95,7 +95,7 @@
 	# 使红米10X 5G和红米10X Pro都能刷入橙狐zip卡刷包
 	export TARGET_DEVICE_ALT="atom, bomb"
 	# 使橙狐可以刷入具有机型检测限制为红米10X 5G或者红米10X Pro的zip卡刷包，与TARGET_OTA_ASSERT_DEVICE冲突
-	# export OF_TARGET_DEVICES="atom,bomb"
+	# export FOX_TARGET_DEVICES="atom,bomb"
 
 	# 防止用户在不使用metadata加密的ROM中重复被metadata装载错误提示刷屏
 	export OF_FBE_METADATA_MOUNT_IGNORE=1
@@ -115,7 +115,7 @@
 	# 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
 	# export MAGISK_VER=25.2
 	# 当修补recovery/boot镜像时，始终指示magiskboot v24+修补vbmeta标头（自动禁用avb验证？）
-	export OF_PATCH_VBMETA_FLAG=1
+	export FOX_PATCH_VBMETA_FLAG=1
 	# 修复部分设备或者rom的解密问题
 	export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
 	# 设置默认时区为北京时间
