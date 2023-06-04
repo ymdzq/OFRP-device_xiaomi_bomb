@@ -56,6 +56,11 @@
 	export OF_OTA_RES_DECRYPT=1
 	# 防止橙狐在解密后重新运行自启动进程
 	export OF_NO_RELOAD_AFTER_DECRYPTION=1
+	# 禁用检查rom里的compatibility.zip
+	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
+	# 使用zip卡刷包的方式安装橙狐后不恢复橙狐的默认设置
+	export FOX_RESET_SETTINGS=1
+
 	## 硬件功能设定
 	# 没有绿色led
 	export OF_USE_GREEN_LED=0
@@ -71,7 +76,9 @@
 	# 设置屏幕高度，状态栏高度，状态栏左右边距
 	# 由于橙狐默认屏幕比例是16：9,所以应设置屏幕高度为屏幕比例换算成n：9之后，n*120
 	export OF_SCREEN_H=2400
+	# 状态栏高度（默认72像素，刘海屏设备按需设置）
 	export OF_STATUS_H=59
+	# 状态栏左右避让宽度（默认20像素，顶部圆角设备按需设置）
 	export OF_STATUS_INDENT_LEFT=90
 	export OF_STATUS_INDENT_RIGHT=90
 	# 添加黑色状态栏（隐藏刘海）选项
@@ -81,7 +88,7 @@
 	# 禁止禁用导航栏
 	export OF_ALLOW_DISABLE_NAVBAR=0
 
-	## 使刷机包兼容红米10X 5G和红米10X Pro
+	## 调整刷入zip刷机包时刷机脚本要检测的相关属性
 	# 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 	# 使红米10X 5G和红米10X Pro都能刷入橙狐zip卡刷包
@@ -99,6 +106,7 @@
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	# 关闭修改橙狐启动画面功能，这个功能可能会导致重启无限卡MI
 	export OF_NO_SPLASH_CHANGE=1
+
 	# 禁用橙狐内置的magisk菜单
 	# export FOX_DELETE_MAGISK_ADDON=1
 	# 使用指定的magisk
