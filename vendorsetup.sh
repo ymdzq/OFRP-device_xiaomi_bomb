@@ -37,6 +37,25 @@
 	# 添加phhusson's lptools工具
 	export OF_ENABLE_LPTOOLS=1
 
+	## 添加橙狐特殊处理
+	# 设定recovery、system、vendor、boot分区路径
+	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
+	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
+	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
+	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
+
+	# 当安装MIUI或者在MIUI上安装橙狐zip，使用magisk处理所有boot和recovery镜像，防止橙狐被MIUI官方recovery替换
+	export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
+	# 避免在已加密设备上应用强制加密补丁
+	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
+	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
+	# export OF_SKIP_FBE_DECRYPTION=1
+	# 当ROM大于等于指定安卓SDK等级时，跳过FBE解密流程
+	# export OF_SKIP_FBE_DECRYPTION_SDKVERSION=31
+	# 在MIUI OTA还原期间尝试解密内部存储（而不是错误退出）
+	export OF_OTA_RES_DECRYPT=1
+	# 防止橙狐在解密后重新运行自启动进程
+	export OF_NO_RELOAD_AFTER_DECRYPTION=1
 	## 硬件功能设定
 	# 没有绿色led
 	export OF_USE_GREEN_LED=0
@@ -63,32 +82,13 @@
 	export OF_ALLOW_DISABLE_NAVBAR=0
 
 	## 使刷机包兼容红米10X 5G和红米10X Pro
+	# 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
+	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 	# 使红米10X 5G和红米10X Pro都能刷入橙狐zip卡刷包
 	export TARGET_DEVICE_ALT="atom, bomb"
 	# 使橙狐可以刷入具有机型检测限制为红米10X 5G或者红米10X Pro的zip卡刷包，与TARGET_OTA_ASSERT_DEVICE冲突
 	# export OF_TARGET_DEVICES="atom,bomb"
 
-	## 添加橙狐特殊处理
-	# 设定recovery、system、vendor、boot分区路径
-	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
-	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
-	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
-	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
-
-	# 当安装MIUI或者在MIUI上安装橙狐zip，使用magisk处理所有boot和recovery镜像，防止橙狐被MIUI官方recovery替换
-	export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
-	# 避免在已加密设备上应用强制加密补丁
-	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
-	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
-	# export OF_SKIP_FBE_DECRYPTION=1
-	# 当ROM大于等于指定安卓SDK等级时，跳过FBE解密流程
-	# export OF_SKIP_FBE_DECRYPTION_SDKVERSION=31
-	# 在MIUI OTA还原期间尝试解密内部存储（而不是错误退出）
-	export OF_OTA_RES_DECRYPT=1
-	# 防止橙狐在解密后重新运行自启动进程
-	export OF_NO_RELOAD_AFTER_DECRYPTION=1
-	# 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
-	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 	# 防止用户在不使用metadata加密的ROM中重复被metadata装载错误提示刷屏
 	export OF_FBE_METADATA_MOUNT_IGNORE=1
 	# 手动刷入OTA增量包时尝试进入OpenRecoveryScript模式完成更新
