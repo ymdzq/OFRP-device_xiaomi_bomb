@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# 关于橙狐变量详见 OrangeFox_10/fox_10.0/vendor/recovery/orangefox_build_vars.txt
+# 关于橙狐变量详见 fox_12.1/vendor/recovery/orangefox_build_vars.txt
 
 	export TW_DEFAULT_LANGUAGE="zh_CN"
 	export LC_ALL="C"
@@ -16,10 +16,10 @@
 	export OF_MAINTAINER=ymdzq
 	# 设置版本号为日期
 	export FOX_VERSION=$(date +%y.%m.%d)
+	# 当你需要标记出这个recovery是一个特殊版本时使用
+	# export FOX_VARIANT=MIUI
 
 	## 添加功能
-	# 使用完整版ps命令
-	export FOX_REPLACE_BUSYBOX_PS=1
 	# 使用完整版getprop命令
 	export FOX_REPLACE_TOOLBOX_GETPROP=1
 	# 支持tar命令
@@ -55,6 +55,8 @@
 	# export OF_SKIP_FBE_DECRYPTION_SDKVERSION=31
 	# 在MIUI OTA还原期间尝试解密内部存储（而不是错误退出）
 	export OF_OTA_RES_DECRYPT=1
+	# 在准备MIUI OTA增量更新时不备份vendor_image
+	# export OF_NO_MIUI_OTA_VENDOR_BACKUP=1
 	# 防止橙狐在解密后重新运行自启动进程
 	export OF_NO_RELOAD_AFTER_DECRYPTION=1
 	# 禁用检查rom里的compatibility.zip
@@ -101,10 +103,10 @@
 	export OF_FBE_METADATA_MOUNT_IGNORE=1
 	# 手动刷入OTA增量包时尝试进入OpenRecoveryScript模式完成更新
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-	# 尝试处理AVB2.0，防止橙狐被官方recovery替换，实测此机型无效
-	# export OF_PATCH_AVB20=1
 	# 在具有此功能的自定义ROM上支持基于块的增量OTA
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+	# 为“快速备份”指定默认选择的分区
+	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	# 关闭修改橙狐启动画面功能，这个功能可能会导致重启无限卡MI
 	export OF_NO_SPLASH_CHANGE=1
 
@@ -113,7 +115,7 @@
 	# 使用指定的magisk
 	# export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/Magisk.zip"
 	# 使用指定的magisk版本号，由于magisk 23+使用了新的包装形式，文件路径改变了，橙狐无法获取正确的版本
-	# export MAGISK_VER=25.2
+	# export MAGISK_VER=26.1
 	# 当修补recovery/boot镜像时，始终指示magiskboot v24+修补vbmeta标头（自动禁用avb验证？）
 	export FOX_PATCH_VBMETA_FLAG=1
 	# 修复部分设备或者rom的解密问题
