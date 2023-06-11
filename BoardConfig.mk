@@ -30,9 +30,6 @@ TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := bomb,atom
 
@@ -131,6 +128,7 @@ TARGET_USES_MKE2FS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 200
+TW_EXCLUDE_APEX := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
