@@ -10,7 +10,7 @@ PRODUCT_RELEASE_NAME := bomb
 
 # 引用默认的编译配置文件，core_64_bit必须先于其他引用，否则不生效
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit from bomb device
 $(call inherit-product, device/xiaomi/bomb/device.mk)
