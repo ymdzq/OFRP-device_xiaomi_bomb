@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# 关于橙狐变量详见 fox_12.1/vendor/recovery/orangefox_build_vars.txt
+# 关于橙狐变量详见 fox_11.0/vendor/recovery/orangefox_build_vars.txt
 
 	export TW_DEFAULT_LANGUAGE="zh_CN"
 	export LC_ALL="C"
