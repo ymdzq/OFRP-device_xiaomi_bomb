@@ -109,6 +109,8 @@
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	# 为“快速备份”指定默认选择的分区
 	export OF_QUICK_BACKUP_LIST="/boot;/data;"
+	# 将装载逻辑分区时的一些错误仅显示在日志里
+	export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
 	# 关闭修改橙狐启动画面功能，这个功能可能会导致重启无限卡MI
 	export OF_NO_SPLASH_CHANGE=1
 
