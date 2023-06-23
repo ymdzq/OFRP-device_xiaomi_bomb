@@ -27,6 +27,7 @@ on property:vendor.sys.listeners.registered=true
     start gatekeeper-1-0
 
 service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
+    interface android.hardware.keymaster@4.0::IKeymasterDevice default
     user root
     group root drmrpc
     disabled
