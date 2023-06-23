@@ -9,6 +9,7 @@ LOCAL_PATH := device/xiaomi/bomb
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Fastbootd
 TW_INCLUDE_FASTBOOTD := true
 
