@@ -122,6 +122,8 @@
 	# export MAGISK_VER=26.1
 	# 当修补recovery/boot镜像时，始终指示magiskboot v24+修补vbmeta标头（自动禁用avb验证？）
 	export FOX_PATCH_VBMETA_FLAG=1
+	# 在修复或格式化f2fs数据分区之前自动卸载绑定/sdcard
+	export OF_UNBIND_SDCARD_F2FS=1
 	# 修复部分设备或者rom的解密问题
 	export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
 	# 设置默认时区为北京时间
