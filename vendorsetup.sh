@@ -133,7 +133,7 @@
 	# 跳过新版fstab处理
 	# export OF_LEGACY_PROCESS_FSTAB=1
 
-	F=$(find "device" -name "bomb")
+	F=$(find "device" -maxdepth 2 -name "bomb")
 	# 修改启动画面背景色为#000000
 	\cp -fp bootable/recovery/gui/theme/portrait_hdpi/splash.xml "$F"/recovery/root/twres/splash.xml
 	sed -i 's/background color="#D34E38"/background color="#000000"/g' "$F"/recovery/root/twres/splash.xml
