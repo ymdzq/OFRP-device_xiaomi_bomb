@@ -6,9 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "vendor/mediatek/proprietary/hardware/fstab/mt6873/fstab.in.mt6873" 2
 # 141 "vendor/mediatek/proprietary/hardware/fstab/mt6873/fstab.in.mt6873"
-system /system ext4 ro wait,,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor /vendor ext4 ro wait,,avb,logical,first_stage_mount
-product /product ext4 ro wait,,avb,logical,first_stage_mount
+system /system ext4 ro wait,logical
+vendor /vendor ext4 ro wait,logical
+product /product ext4 rw wait,logical
 /dev/block/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable
 /dev/block/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt wait,check,formattable,quota,reservedsize=128m,latemount,resize,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v1
 /dev/block/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check,formattable
