@@ -45,4 +45,5 @@ service vendor.mtk.vibrator-1-2 /vendor/bin/hw/vendor.mtk.hardware.vibrator@1.2-
     class hal
     user root
     group root
+    disabled
     seclabel u:r:recovery:s0
