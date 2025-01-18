@@ -25,7 +25,11 @@
 	# 支持tar命令
 	export FOX_USE_TAR_BINARY=1
 	# 支持sed命令
-	export FOX_USE_SED_BINARY=1
+	# export FOX_USE_SED_BINARY=1
+	# 支持lz4命令
+	export FOX_USE_LZ4_BINARY=1
+	# 支持zstd命令
+	export FOX_USE_ZSTD_BINARY=1
 	# 使用bash代替sh和ash
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
@@ -36,7 +40,7 @@
 	# 支持lzma, xz命令
 	export FOX_USE_XZ_UTILS=1
 	# 使用橙狐编译的NANO编辑器
-	export FOX_USE_NANO_EDITOR=1
+	# export FOX_USE_NANO_EDITOR=1
 	# 添加phhusson's lptools工具
 	export OF_ENABLE_LPTOOLS=1
 
@@ -133,7 +137,7 @@
 	# 支持通过修补vbmeta/vbmeta_system禁用avb2.0
 	export OF_SUPPORT_VBMETA_AVB2_PATCHING=1
 	# 安装压缩包页面选项的最大数量，调小这个值会显示滚动条（大于4小于9时生效，默认为4）
-	export OF_OPTIONS_LIST_NUM=6
+	export OF_OPTIONS_LIST_NUM=9
 
 	F=$(find "device" -maxdepth 2 -name "bomb")
 	# 修改启动画面背景色为#000000
