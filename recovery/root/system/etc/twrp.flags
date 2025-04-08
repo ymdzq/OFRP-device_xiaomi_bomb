@@ -7,6 +7,7 @@
 /data               ext4     /dev/block/by-name/userdata                     flags=display="Data";fileencryption=aes-256-xts:aes-256-cts:v1
 /cache              ext4     /dev/block/by-name/cache                        flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
 /storage            ext4     /data/media/0                                   flags=display="Internal Storage";backup=1;usermrf;fsflags="bind";removable
+/frp                emmc     /dev/block/by-name/frp                          flags=display="Google Lock(FRP)";wipeingui
 
 # super
 /system             ext4     /dev/block/mapper/system                        flags=display="System";logical
