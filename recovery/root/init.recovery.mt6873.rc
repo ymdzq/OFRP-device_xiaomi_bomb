@@ -20,6 +20,7 @@ on post-fs
 on boot
     start health-hal-2-1
     start vendor.mtk.vibrator-1-2
+    start batterysecret
     setprop sys.usb.config adb
 
 on property:vendor.sys.listeners.registered=true
