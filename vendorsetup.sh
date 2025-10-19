@@ -21,7 +21,7 @@
 
 	## 添加功能
 	# 使用完整版getprop命令
-	export FOX_REPLACE_TOOLBOX_GETPROP=1
+	# export FOX_REPLACE_TOOLBOX_GETPROP=1
 	# 支持tar命令
 	export FOX_USE_TAR_BINARY=1
 	# 支持sed命令
@@ -30,13 +30,15 @@
 	export FOX_USE_LZ4_BINARY=1
 	# 支持zstd命令
 	export FOX_USE_ZSTD_BINARY=1
+	# 支持date命令
+	export FOX_USE_DATE_BINARY=1
 	# 使用bash代替sh和ash
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
 	# 添加橙狐的app管理器功能
 	export FOX_ENABLE_APP_MANAGER=1
 	# 使用完整版grep命令
-	export FOX_USE_GREP_BINARY=1
+	# export FOX_USE_GREP_BINARY=1
 	# 支持lzma, xz命令
 	export FOX_USE_XZ_UTILS=1
 	# 使用橙狐编译的NANO编辑器
@@ -51,10 +53,6 @@
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
 
-	# 当安装MIUI或者在MIUI上安装橙狐zip，使用magisk处理所有boot和recovery镜像，防止橙狐被MIUI官方recovery替换
-	export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
-	# 避免在已加密设备上应用强制加密补丁
-	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
 	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
 	# export OF_SKIP_FBE_DECRYPTION=1
 	# 当ROM大于等于指定安卓SDK等级时，跳过FBE解密流程
