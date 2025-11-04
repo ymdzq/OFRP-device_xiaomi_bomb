@@ -22,6 +22,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_DEVICE := bomb
 PRODUCT_NAME := twrp_bomb
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := M2004J7BC
+#PRODUCT_MODEL := M2004J7BC
 PRODUCT_MANUFACTURER := Xiaomi
-#PRODUCT_RELEASE_NAME := Redmi 10X Pro
+PRODUCT_MODEL := Redmi 10X Pro
